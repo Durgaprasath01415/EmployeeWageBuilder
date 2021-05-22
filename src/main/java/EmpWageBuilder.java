@@ -11,8 +11,11 @@ public class EmpWageBuilder
         final int IS_PART_TIME = 2;
         final int RATEPERHOUR = 20;
         final int NO_OF_WORKING_DAYS = 20;
+      
+        int empHrs = 0;
+        int totalSalary = 0;
+        for (int day = 1; day <= NO_OF_WORKING_DAYS; day++) {
         final int MAX_HRS_IN_MONTH = 100;
-
         int empHrs = 0 , totalSalary = 0 , totalEmpHrs=0 , totalWorkingDays =0;
         while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NO_OF_WORKING_DAYS)
         {
