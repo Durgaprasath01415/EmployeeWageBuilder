@@ -5,11 +5,11 @@ public class EmpWageBuilder {
         System.out.println("Welcome to Employee Wage Computation");
         final int IS_FULL_TIME = 1;
         final int IS_PART_TIME = 2;
-        final int RatePerHour = 20;
-        final int No_Of_Working_Days = 20;
+        final int RATEPERHOUR = 20;
+        final int NO_OF_WORKING_DAYS = 20;
         int empHrs = 0;
-        int TotalSalary = 0;
-        for (int day = 1; day <= No_Of_Working_Days; day++) {
+        int totalSalary = 0;
+        for (int day = 1; day <= NO_OF_WORKING_DAYS; day++) {
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
             System.out.println(empCheck);
             switch (empCheck) {
@@ -26,10 +26,10 @@ public class EmpWageBuilder {
                     empHrs = 0;
                     break;
             }
-            int Wage = (RatePerHour * empHrs);
+            int Wage = (RATEPERHOUR * empHrs);
             System.out.println("Wage of Employee = " + Wage);
-            TotalSalary += Wage;
+            totalSalary += Wage;
         }
-        System.out.println("Total Salary =" + TotalSalary);
+        System.out.println("Total Salary =" + totalSalary);
     }
 }
