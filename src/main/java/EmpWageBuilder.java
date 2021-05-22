@@ -4,9 +4,8 @@ public class EmpWageBuilder {
     public static final int IS_PART_TIME = 2;
 
     public static int calculationEmpWage(int ratePerHour, int no_of_Working_Days, int maxHour) {
-        System.out.println("Welcome to Employee Wage Computation");
         int empHrs = 0, totalSalary = 0, totalEmpHrs = 0, totalWorkingDays = 0;
-        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NO_OF_WORKING_DAYS)
+        while (totalEmpHrs <= maxHour && totalWorkingDays < no_of_Working_Days)
         {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
