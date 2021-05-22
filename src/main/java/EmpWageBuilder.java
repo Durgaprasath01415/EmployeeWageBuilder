@@ -13,10 +13,10 @@ public class EmpWageBuilder
         final int NO_OF_WORKING_DAYS = 20;
         final int MAX_HRS_IN_MONTH = 100;
 
-        int empHrs = 0 , TotalSalary = 0 , TotalEmpHrs=0 , TotalWorkingDays =0;
-        while (TotalEmpHrs <= MAX_HRS_IN_MONTH && TotalWorkingDays < NO_OF_WORKING_DAYS)
+        int empHrs = 0 , totalSalary = 0 , totalEmpHrs=0 , totalWorkingDays =0;
+        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NO_OF_WORKING_DAYS)
         {
-            TotalWorkingDays++;
+            totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
             System.out.println(empCheck);
             switch (empCheck)
@@ -36,8 +36,8 @@ public class EmpWageBuilder
             }
             int Wage = (RATEPERHOUR * empHrs);
             System.out.println("Wage of Employee = " + Wage);
-            TotalSalary += Wage;
+            totalSalary += Wage;
         }
-        System.out.println("Total Salary =" + TotalSalary);
+        System.out.println("Total Salary =" + totalSalary);
     }
 }
