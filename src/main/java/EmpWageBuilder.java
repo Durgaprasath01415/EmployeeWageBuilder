@@ -16,32 +16,33 @@ public class EmpWageBuilder {
         this.no_of_Working_Days = no_of_Working_Days;
         this.maxHour = maxHour;
     }
-        public int calculationEmpWage ( ) {
-            int empHrs = 0, totalSalary = 0, totalEmpHrs = 0, totalWorkingDays = 0;
-            while (totalEmpHrs <= maxHour && totalWorkingDays < no_of_Working_Days) {
-                totalWorkingDays++;
-                int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-                switch (empCheck) {
-                    case IS_FULL_TIME:
-                        empHrs = 8;
-                        break;
-                    case IS_PART_TIME:
-                        empHrs = 4;
-                        break;
-                    default:
-                        empHrs = 0;
-                        break;
-                }
-                int Wage = (ratePerHour * empHrs);
-                totalSalary += Wage;
+
+    public int calculationEmpWage() {
+        int empHrs = 0, totalSalary = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+        while (totalEmpHrs <= maxHour && totalWorkingDays < no_of_Working_Days) {
+            totalWorkingDays++;
+            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+            switch (empCheck) {
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
-            return totalSalary;
+            int Wage = (ratePerHour * empHrs);
+            totalSalary += Wage;
         }
+        return totalSalary;
+    }
     public static void main(String[] args) {
         EmpWageBuilder Dmart = new EmpWageBuilder ("Dmart", 20, 20, 100);
         EmpWageBuilder Infosys = new EmpWageBuilder("Infosys", 20, 25, 150);
         System.out.println("Employee Wage for Dmart " + Dmart.calculationEmpWage());
         System.out.println("Employee Wage for Infosys " + Infosys.calculationEmpWage());
+        }
     }
-}
 
