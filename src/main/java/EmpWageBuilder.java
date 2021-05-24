@@ -51,6 +51,5 @@ public class EmpWageBuilder {
         System.out.println(dMart);
         Infosys.calculationEmpWage();
         System.out.println(Infosys);
-        }
     }
-
+}
