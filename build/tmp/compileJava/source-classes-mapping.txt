@@ -1,5 +1,4 @@
 CompanyEmpWage.java
  CompanyEmpWage
- IComputeEmpWage
 EmpWageBuilder.java
  EmpWageBuilder
