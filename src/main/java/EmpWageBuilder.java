@@ -1,29 +1,28 @@
 import javax.imageio.stream.ImageInputStream;
+import java.util.LinkedList;
+
 public class EmpWageBuilder implements IComputeEmpWage {
     public static final int IS_FULL_TIME = 1;
     public static final int IS_PART_TIME = 2;
 
-    private int numOfCompany = 0;
-   private CompanyEmpWage[] companyEmpWageArray;
+   private LinkedList<CompanyEmpWage> computeEmpWageList;
 
    public EmpWageBuilder(){
-        companyEmpWageArray = new CompanyEmpWage[5];
+        computeEmpWageList = new LinkedList<>();
    }
 public void addCompanyEmpWage(String company, int ratePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
-       companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company,ratePerHour,numOfWorkingDays,maxHoursPerMonth);
-       numOfCompany++;
+       CompanyEmpWage companyEmpWage = new CompanyEmpWage(company,ratePerHour,numOfWorkingDays,maxHoursPerMonth);
+       computeEmpWageList.add(companyEmpWage);
 }
 
     public void computeEmpWage() {
-        for (int i = 0; i < numOfCompany; i++) {
-            companyEmpWageArray[i].setTotalEmpWage(this.calculationEmpWage(companyEmpWageArray[i]));
-            System.out.println(companyEmpWageArray[i]);
+        for (int i = 0; i < computeEmpWageList.size(); i++) {
+            CompanyEmpWage companyEmpWage = computeEmpWageList.get(i);
+            companyEmpWage.setTotalEmpWage(this.calculationEmpWage(companyEmpWage));
+            System.out.println(companyEmpWage);
         }
     }
-    @Override
-    public int getTotalWage(String company) {
-        return 0;
-    }
+
 
     public int calculationEmpWage(CompanyEmpWage companyEmpWage) {
         int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
