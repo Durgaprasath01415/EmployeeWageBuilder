@@ -2,7 +2,6 @@
 interface IComputeEmpWage {
     public void addCompanyEmpWage(String company,int ratePerHour, int numOfWorkingDays,int maxHoursPerMonth);
     public void computeEmpWage();
-    public int getTotalWage(String company);
 }
 public class CompanyEmpWage {
     public final String company;
@@ -17,13 +16,12 @@ public class CompanyEmpWage {
         this.numOfWorkingDays = numOfWorkingDays;
         this.maxHoursPerMonth = maxHoursPerMonth;
     }
-    public void setTotalEmpWage(int totalEmpWage){
-
+public void setTotalEmpWage(int totalEmpWage){
         this.totalEmpWage = totalEmpWage;
-    }
-
+}
     @Override
     public String toString(){
         return "Total Emp Wage for Company "+ company + " is: "+ totalEmpWage;
+        
     }
 }
