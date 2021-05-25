@@ -1,14 +1,18 @@
 import javax.imageio.stream.ImageInputStream;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class EmpWageBuilder implements IComputeEmpWage {
     public static final int IS_FULL_TIME = 1;
     public static final int IS_PART_TIME = 2;
 
    private LinkedList<CompanyEmpWage> computeEmpWageList;
+   private Map<String,CompanyEmpWage> companyEmpWageMap;
 
    public EmpWageBuilder(){
         computeEmpWageList = new LinkedList<>();
+        companyEmpWageMap = new HashMap<>();
    }
 public void addCompanyEmpWage(String company, int ratePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
        CompanyEmpWage companyEmpWage = new CompanyEmpWage(company,ratePerHour,numOfWorkingDays,maxHoursPerMonth);
