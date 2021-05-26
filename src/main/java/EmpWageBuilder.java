@@ -19,7 +19,7 @@ public class EmpWageBuilder {
     }
 
     public void calculationEmpWage() {
-        int empHrs = 0, totalSalary = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+        int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
         while (totalEmpHrs <= maxHour && totalWorkingDays < no_of_Working_Days) {
             totalWorkingDays++;
             int empCheck = (int) Math.floor(Math.random() * 10) % 3;
@@ -42,7 +42,7 @@ public class EmpWageBuilder {
 
     @Override
     public String toString(){
-        return "Total Emp Wage for Company: " +Company + " is: "+totalEmpWage;
+        return "Total Emp Wage for Company: " + Company + " is: "+ totalEmpWage;
     }
     public static void main(String[] args) {
         EmpWageBuilder dMart = new EmpWageBuilder ("Dmart", 20, 20, 100);
